@@ -1,5 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import Search from './components/atoms/search';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -31,6 +32,7 @@ body {
 	line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
 
+
 }
 ol, ul {
 	list-style: none;
@@ -61,6 +63,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
+      <Search />
     </div>
   );
 }
