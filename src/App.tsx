@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import ComuMenu from './components/molecules/comuMenu';
+import InforMenu from './components/molecules/infoMenu';
 import NavBar1 from './components/organisms/navbar1';
 
 const GlobalStyle = createGlobalStyle`
@@ -70,6 +71,7 @@ function App() {
       <GlobalStyle />
       <NavBar1 />
       <ComuMenu />
+      <InforMenu />
     </MainWapper>
   );
 }
