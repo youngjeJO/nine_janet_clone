@@ -1,5 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import Logo from './components/atoms/logo';
 import Search from './components/atoms/search';
 import LogInMenu from './components/molecules/loginMenu';
 
@@ -64,6 +65,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
+      <Logo />
       <Search />
       <LogInMenu />
     </div>
