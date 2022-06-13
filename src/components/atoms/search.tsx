@@ -45,7 +45,6 @@ function Search() {
   const onFocus = (event: React.FormEvent<HTMLInputElement>) => {
     setFocus(!focus);
   };
-
   return (
     <Formcontainer focus={focus}>
       <LabelBox htmlFor=''>통합검색</LabelBox>

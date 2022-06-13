@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import Search from './components/atoms/search';
+import LogInMenu from './components/molecules/loginMenu';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -64,6 +65,7 @@ function App() {
     <div>
       <GlobalStyle />
       <Search />
+      <LogInMenu />
     </div>
   );
 }
