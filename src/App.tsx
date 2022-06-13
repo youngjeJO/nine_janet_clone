@@ -1,8 +1,6 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
-import Logo from './components/atoms/logo';
-import Search from './components/atoms/search';
-import LogInMenu from './components/molecules/loginMenu';
+import styled, { createGlobalStyle } from 'styled-components';
+import NavBar1 from './components/organisms/navbar1';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -61,14 +59,16 @@ a {
 }
 `;
 
+const MainWapper = styled.div`
+  width: 1250px;
+  margin: auto;
+`;
 function App() {
   return (
-    <div>
+    <MainWapper>
       <GlobalStyle />
-      <Logo />
-      <Search />
-      <LogInMenu />
-    </div>
+      <NavBar1 />
+    </MainWapper>
   );
 }
 

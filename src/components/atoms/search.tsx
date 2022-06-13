@@ -4,6 +4,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 
 const Formcontainer = styled.form<{ focus: boolean }>`
   width: ${(props) => (props.focus ? '550px' : '400px')};
+  height: 40px;
   border: solid 2px #9c57f5;
   border-radius: 20px;
   display: flex;
@@ -16,13 +17,14 @@ const LabelBox = styled.label`
   width: 150px;
   padding-left: 25px;
   font-weight: bold;
+  font-size: 14px;
 `;
 
 const InputBox = styled.input<{ focus: boolean }>`
   width: 100%;
   border: none;
   outline: none;
-  height: 35px;
+  height: 30px;
   ::placeholder {
     color: ${(props) => (props.focus ? '#9c57f5' : null)};
     font-weight: bold;
