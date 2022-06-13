@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import NavBar1 from './components/organisms/navbar1';
+import Navbar2 from './components/organisms/navbar2';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -57,6 +58,10 @@ a {
 *{
   box-sizing: border-box;
 }
+button {
+  background-color: white;
+  border: none;
+}
 `;
 
 const MainWapper = styled.div`
@@ -68,6 +73,7 @@ function App() {
     <MainWapper>
       <GlobalStyle />
       <NavBar1 />
+      <Navbar2 />
     </MainWapper>
   );
 }
