@@ -43,15 +43,26 @@ function Search() {
   const [focus, setFocus] = useState(false);
   const [inputVal, setInputVal] = useState('');
   const onFocus = (event: React.FormEvent<HTMLInputElement>) => {
-    setFocus(!focus);
+    setFocus(true);
   };
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setInputVal('');
+  };
+
+  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
+    setInputVal(event.currentTarget.value);
+  };
+
   return (
-    <Formcontainer focus={focus}>
+    <Formcontainer focus={focus} onSubmit={onSubmit}>
       <LabelBox htmlFor=''>통합검색</LabelBox>
       <InputBox
         type='text'
         onFocus={onFocus}
         focus={focus}
+        onChange={onChange}
+        value={inputVal}
         placeholder='자격증 꿀팁 보러가기 #취준 #취뽀'
       />
       <ButtonBox>
