@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import DropDownMenu from './components/atoms/dropDownMenu';
-import ComuMenu from './components/molecules/comuMenu';
-import InforMenu from './components/molecules/infoMenu';
 import NavBar1 from './components/organisms/navbar1';
+import Navbar2 from './components/organisms/navbar2';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -75,9 +73,7 @@ function App() {
     <MainWapper>
       <GlobalStyle />
       <NavBar1 />
-      <ComuMenu />
-      <InforMenu />
-      <DropDownMenu />
+      <Navbar2 />
     </MainWapper>
   );
 }

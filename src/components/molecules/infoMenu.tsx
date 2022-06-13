@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import Information from '../atoms/infomation';
-import ListBtn from '../atoms/listBtn';
 
 const MenuWapper = styled.div`
-  width: 600px;
+  width: 500px;
   display: flex;
   justify-content: space-around;
 `;
@@ -11,7 +10,6 @@ const MenuWapper = styled.div`
 function InforMenu() {
   return (
     <MenuWapper>
-      <ListBtn />
       <Information name='Top100' />
       <Information name='자격증정보' />
       <Information name='어학/공무원' />

@@ -15,15 +15,17 @@ const MenuWapper = styled.ul`
 `;
 
 const ListBox = styled.ul`
-  width: 200px;
+  width: 100%;
   padding: 30px;
   border: solid 1px #efefef;
+
   ul {
     padding-bottom: 20px;
   }
   li {
     padding: 10px 10px 10px 0;
     font-size: 13px;
+
     :hover {
       color: #9c57f5;
     }

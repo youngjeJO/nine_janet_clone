@@ -1,6 +1,10 @@
-import { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import styled from 'styled-components';
+
+interface Idrop {
+  dropDown: boolean;
+  setDropDown: (dropDown: boolean) => void;
+}
 
 const Wapper = styled.div`
   display: flex;
@@ -17,16 +21,14 @@ const ListBtnBox = styled.button`
   cursor: pointer;
 `;
 
-function ListBtn() {
-  const [dropDown, setDropDown] = useState(false);
-
-  const onClick = () => {
-    setDropDown(!dropDown);
+function ListBtn(props: Idrop) {
+  const showList = () => {
+    props.setDropDown(!props.dropDown);
   };
 
   return (
     <Wapper>
-      <ListBtnBox onClick={onClick}>
+      <ListBtnBox onClick={showList}>
         <GiHamburgerMenu />
       </ListBtnBox>
     </Wapper>
