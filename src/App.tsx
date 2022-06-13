@@ -1,5 +1,6 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import NavBar1 from './components/organisms/navbar1';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;400&display=swap');
@@ -31,6 +32,7 @@ body {
 	line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
 
+
 }
 ol, ul {
 	list-style: none;
@@ -57,11 +59,16 @@ a {
 }
 `;
 
+const MainWapper = styled.div`
+  width: 1250px;
+  margin: auto;
+`;
 function App() {
   return (
-    <div>
+    <MainWapper>
       <GlobalStyle />
-    </div>
+      <NavBar1 />
+    </MainWapper>
   );
 }
 
