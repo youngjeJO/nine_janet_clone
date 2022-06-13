@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import DropDownMenu from './components/atoms/dropDownMenu';
 import ComuMenu from './components/molecules/comuMenu';
 import InforMenu from './components/molecules/infoMenu';
 import NavBar1 from './components/organisms/navbar1';
@@ -59,6 +60,10 @@ a {
 *{
   box-sizing: border-box;
 }
+button {
+  background-color: white;
+  border: none;
+}
 `;
 
 const MainWapper = styled.div`
@@ -72,6 +77,7 @@ function App() {
       <NavBar1 />
       <ComuMenu />
       <InforMenu />
+      <DropDownMenu />
     </MainWapper>
   );
 }
