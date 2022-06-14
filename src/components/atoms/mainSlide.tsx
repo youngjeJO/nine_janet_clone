@@ -26,7 +26,9 @@ const ButtonBox = styled.div`
   right: 50px;
   top: 50px;
   z-index: 1;
-  color: #9c57f5;
+  button {
+    color: #9c57f5;
+  }
 `;
 
 const SlideWapper = styled.div<ISlide>`
