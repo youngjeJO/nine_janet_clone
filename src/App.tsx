@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import SlideSection from './components/molecules/slideSection';
+import SlideSection from './components/organisms/slideSection';
 import NavBar1 from './components/organisms/navbar1';
 import Navbar2 from './components/organisms/navbar2';
 
