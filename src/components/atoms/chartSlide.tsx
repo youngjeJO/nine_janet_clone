@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import chartData from '../data/chartData.json';
 import { MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
 
-export interface ISlide {
+interface ISlide {
   currentSlide: number;
   transition: string;
 }
