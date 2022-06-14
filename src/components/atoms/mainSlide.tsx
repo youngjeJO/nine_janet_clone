@@ -10,9 +10,11 @@ interface ISlide {
 
 const Wapper = styled.main`
   width: 550px;
+  height: 370px;
   margin-left: 10px;
   padding: 40px 30px 35px;
   position: relative;
+  background-color: white;
 `;
 
 const MainContainer = styled.div`
@@ -72,6 +74,7 @@ const ContentsBox = styled.li`
 const Banner = styled.img`
   display: block;
   margin: auto;
+  margin-top: 40px;
 `;
 
 function MainSlide() {

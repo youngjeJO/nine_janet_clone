@@ -10,31 +10,34 @@ interface ISlide {
 
 const MainContainer = styled.div`
   width: 260px;
+  height: 370px;
+  margin-left: 10px;
   overflow: hidden;
   display: flex;
   position: relative;
+  background-color: white;
 `;
 
 const SlideWapper = styled.div<ISlide>`
-  margin-left: 10px;
-  padding: 25px;
+  padding: 40px 30px 35px;
   transition: ${(props) => props.transition};
   transform: ${(props) => `translateX(-${props.currentSlide}00%)`};
   h1 {
+    padding-top: 10px;
     font-size: 17px;
     font-weight: bold;
     margin-bottom: 20px;
   }
 
   ul {
-    width: 210px;
+    width: 200px;
   }
 `;
 
 const ButtonBox = styled.div`
   position: absolute;
   right: 0;
-  top: 28px;
+  top: 50px;
   z-index: 1;
   button {
     color: #9c57f5;
@@ -43,7 +46,7 @@ const ButtonBox = styled.div`
 `;
 
 const ContentsBox = styled.li`
-  padding: 10px;
+  padding: 3px;
   img {
     margin-right: 25px;
     width: 72px;

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import AutoSlide from './components/atoms/autoSlide';
-import BannerSlide from './components/atoms/banerSlide';
-import ChartSlide from './components/atoms/chartSlide';
-import MainSlide from './components/atoms/mainSlide';
+import SlideSection from './components/molecules/slideSection';
 import NavBar1 from './components/organisms/navbar1';
 import Navbar2 from './components/organisms/navbar2';
 
@@ -78,10 +75,7 @@ function App() {
       <GlobalStyle />
       <NavBar1 />
       <Navbar2 />
-      {/* <AutoSlide />
-      <MainSlide />
-      <ChartSlide /> */}
-      <BannerSlide />
+      <SlideSection />
     </MainWapper>
   );
 }
