@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import AutoSlide from './components/atoms/autoSlide';
+import MainSlide from './components/atoms/mainSlide';
 import NavBar1 from './components/organisms/navbar1';
 import Navbar2 from './components/organisms/navbar2';
 
@@ -76,6 +77,7 @@ function App() {
       <NavBar1 />
       <Navbar2 />
       <AutoSlide />
+      <MainSlide />
     </MainWapper>
   );
 }
