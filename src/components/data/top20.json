@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "토익(TOEIC)",
+    "licenseOrgan": "미국 ETS",
+    "esRegdt": "2022-06-22T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/155/hotKeyword_02.jpg"
+  },
+  {
+    "id": 2,
+    "title": "한국사능력검정시험",
+    "licenseOrgan": "국사편찬위원회",
+    "esRegdt": "2022-07-13T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/144/hotKeyword_03.jpg"
+  },
+  {
+    "id": 3,
+    "title": "전기기사",
+    "licenseOrgan": "한국산업인력공단",
+    "esRegdt": "2022-07-13T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/91/hotKeyword_11.jpg"
+  },
+  {
+    "id": 4,
+    "title": "공인중개사",
+    "licenseOrgan": "한국산업인력공단",
+    "esRegdt": "2022-07-13T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/331/hotKeyword_05.jpg"
+  },
+  {
+    "id": 5,
+    "title": "산업안전기사",
+    "licenseOrgan": "한국산업인력공단",
+    "esRegdt": "2022-07-13T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/96/hotKeyword_13.jpg"
+  },
+  {
+    "id": 6,
+    "title": "KBS한국어능력시험",
+    "licenseOrgan": "KBS 한국어진흥원",
+    "esRegdt": "2022-07-02T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/145/.6rO17Ya17ZWc6rWt7Ja066mU7J24.jpg"
+  },
+  {
+    "id": 7,
+    "title": "요양보호사",
+    "licenseOrgan": "한국보건의료인국가시험원",
+    "esRegdt": "2022-08-06T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/1622601017/7IKs7ZqM67O17KeA7IKs66mU7J24.jpg"
+  },
+  {
+    "id": 8,
+    "title": "ITQ",
+    "licenseOrgan": "한국생산성본부",
+    "esRegdt": "2022-07-13T00:00:00.000+00:00",
+    "img": "https://janet.co.kr/data/licenseitem/176/hotKeyword_24.jpg"
+  }
+]
