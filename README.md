@@ -1,46 +1,142 @@
-# Getting Started with Create React App
+# 나인커뮤니케이션 사전 테스트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트 소개
 
-## Available Scripts
+- 자넷 홈페이지 클론
 
-In the project directory, you can run:
+## 기술 스택
 
-### `npm start`
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![TypeScript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 실행 방법
 
-### `npm test`
+```
+① 해당 레포지토리를 클론한다.
+② 프로젝트의 패키지를 설치한다. (npm install)
+③ scripts 명령어로 프로젝트를 실행한다. (npm start)
+```
+## 구현 상태
+  ![image](https://user-images.githubusercontent.com/97160021/173723174-2f691564-647f-409f-9d2b-59bf4481e16a.png)
+## 요구사항
+- 자넷 홈페이지 메인 클론
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 구현 방법
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Styled-component 사용
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 전체적인 css를 style-component를 활용하여 홈페이지를 구현하였습니다. 특히 이번 과제가 기능 보다는 style 요소를 활용할 일이 많아 props 전달 등을 공부할 수 있는 시간이었습니다.
+    
+  ```
+    const InfoBox = styled.div<IMenu>`
+  width: 100px;
+  height: 65px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  :hover {
+    color: ${(props) => {
+      if (props.name === '자넷info') {
+        return 'rgba(0, 0, 0, 0)';
+      } else if (props.name === '자넷톡') {
+        return 'rgba(0, 0, 0, 0)';
+      } else {
+        return '#9c57f5';
+      }
+    }};
+    background: ${(props) => {
+      if (props.name === '자넷info') {
+        return "url('https://janet.co.kr/img/common/gnbInfo.png') no-repeat center 18px";
+      } else if (props.name === '자넷톡') {
+        return "url('https://janet.co.kr/img/common/gnbTalk.png') no-repeat center 18px";
+      }
+    }};
+  }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```
+### json data 제작
+ - 홈페이지를 구현하는데 있어 불필요한 마크업 작업이 많다고 생각되어 홈페이지에 있는 정보를 기반으로 json data를 만들어 map() 메소드를 활용하여 마크업 하였습니다.
+ - top20에 주어진 data가 21년 기준으로 되어있어 22년으로 수정하여 작업하였습니다.
+ 
+ ```
+{
+    "name": "자격증정보",
+    "contents": [
+      {
+        "icon": "https://janet.co.kr/html_demo/img/main/inCrfc.png",
+        "title": "자격증정보",
+        "contents": "자격증정보의 모든 것"
+      },
+      {
+        "icon": "https://janet.co.kr/html_demo/img/main/iCrtfc.png",
+        "title": "계열별정보",
+        "contents": "자격증에 대하여 알려드립니다."
+      },
+      {
+        "icon": "https://janet.co.kr/html_demo/img/main/sCrtfc.png",
+        "title": "자격증 공모전",
+        "contents": "자격증 관련 공모전 정보 확인하기"
+      },
+      {
+        "icon": "https://janet.co.kr/html_demo/img/main/rCrtfc.png",
+        "title": "시험접수안내",
+        "contents": "필기/실기 기본접수안내"
+      }
+    ]
+  }
 
-### `npm run eject`
+    ```
+    
+    ### 캐러셀 구현
+ - 이번 과제에서 가장 큰 기능이라고 생각되었던 캐러셀을 자동넘김, 수동넘김, 베너 로 구분하여 구현하였습니다.
+   시간 관계상 swipe기능을 넣지 못하여 아쉽지만 리펙토링을 통하여 구현해보겠습니다.
+ - 아래에 코드가 캐러셀을 구현하는 공통적으로 사용되었습니다.
+ 
+ ```
+const [currentSlide, setCurrentSlide] = useState(1);
+  const [transition, setTransition] = useState('500ms');
+  let timer: NodeJS.Timeout;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  const slideChange = (targetIndex: number) => {
+    setTransition('350ms');
+    setCurrentSlide(targetIndex);
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      setTransition('0s');
+      if (targetIndex < 1) {
+        targetIndex = chartData.length - 2;
+      } else if (targetIndex === chartData.length - 1) {
+        targetIndex = 1;
+      } else {
+        return;
+      }
+      setCurrentSlide(targetIndex);
+    }, 300);
+  };
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  const nextSlide = () => {
+    const targetIndex = currentSlide + 1;
+    slideChange(targetIndex);
+  };
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  const prevSlide = () => {
+    const targetIndex = currentSlide - 1;
+    slideChange(targetIndex);
+  };
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 어려웠던 점 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- style을 구현하는데 있어서 조금 어려움을 겪었습니다 평소 기능에만 초첨을 맞춰 구현을 하다 style에 신경을 쓰지 못했는데 이번 과제를 통해 style을 적용하는데 많은 공부를 하게 되었습니다.
+ 
