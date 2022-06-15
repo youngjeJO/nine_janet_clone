@@ -23,6 +23,8 @@ const Ai = styled.div`
   :hover {
     ::after {
       content: '추천테스트';
+      height: 15px;
+      line-height: 15px;
       padding: 3px;
       font-size: 14px;
       font-weight: bold;
