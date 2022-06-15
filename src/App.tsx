@@ -67,7 +67,9 @@ button {
 `;
 
 const MainWapper = styled.div`
-  width: 1250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: auto;
 `;
 function App() {

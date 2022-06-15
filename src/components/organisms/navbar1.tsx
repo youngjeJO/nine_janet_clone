@@ -3,10 +3,13 @@ import Logo from '../atoms/logo';
 import Search from '../atoms/search';
 import LogInMenu from '../molecules/loginMenu';
 
+const Wapper = styled.nav`
+  margin: auto;
+`;
 const NavWapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 1250px;
   div {
     display: flex;
     align-items: center;
@@ -15,13 +18,15 @@ const NavWapper = styled.div`
 
 function NavBar1() {
   return (
-    <NavWapper>
-      <div>
-        <Logo />
-        <Search />
-      </div>
-      <LogInMenu />
-    </NavWapper>
+    <Wapper>
+      <NavWapper>
+        <div>
+          <Logo />
+          <Search />
+        </div>
+        <LogInMenu />
+      </NavWapper>
+    </Wapper>
   );
 }
 

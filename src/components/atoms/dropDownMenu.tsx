@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const MenuWapper = styled.ul`
   display: flex;
-  width: 100%;
+  width: 1250px;
+  margin: auto;
 
   p {
     padding-bottom: 10px;

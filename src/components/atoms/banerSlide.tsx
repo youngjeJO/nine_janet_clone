@@ -9,8 +9,9 @@ export interface ISlide {
 }
 
 const MainContainer = styled.main`
-  width: 100%;
+  width: 1250px;
   display: flex;
+  margin: auto;
 `;
 
 const SectionContainer = styled.section`
