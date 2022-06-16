@@ -21,8 +21,9 @@
 ② 프로젝트의 패키지를 설치한다. (npm install)
 ③ scripts 명령어로 프로젝트를 실행한다. (npm start)
 ```
-## 구현 상태
-  ![image](https://user-images.githubusercontent.com/97160021/173723174-2f691564-647f-409f-9d2b-59bf4481e16a.png)
+## 시현 영상
+ ![React_App_-_Chrome_2022-06-16_09-28-26_AdobeExpress_AdobeExpress (1)](https://user-images.githubusercontent.com/97160021/173967419-4bc6bc90-8fe5-4a3a-865a-699d98a8bce1.gif)
+
 ## 요구사항
 - 자넷 홈페이지 메인 클론
 
