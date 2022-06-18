@@ -23,7 +23,7 @@ const SlideBox = styled.li<ISlide>`
 
 function AutoSlide() {
   const [currentSlide, setCurrentSlide] = useState(1);
-  const [transition, setTransition] = useState('1500ms');
+  const [transition, setTransition] = useState('');
   const slideImg = [
     'https://janet.co.kr/img/common/main/banner/mainBn_top_04.png',
     'https://janet.co.kr/img/common/main/banner/mainBn_top_01.png',
@@ -33,17 +33,18 @@ function AutoSlide() {
     'https://janet.co.kr/img/common/main/banner/mainBn_top_01.png',
   ];
 
-  const timer = setTimeout(() => {
-    setTransition('1500ms');
-
-    if (currentSlide === 5) {
-      setTransition('0s');
-      setCurrentSlide(1);
-      clearTimeout(timer);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-  }, 3000);
+  const timer: NodeJS.Timeout = setTimeout(
+    () => {
+      setTransition('350ms');
+      if (currentSlide === 5) {
+        setTransition('0s');
+        setCurrentSlide(1);
+      } else {
+        setCurrentSlide(currentSlide + 1);
+      }
+    },
+    currentSlide === 5 ? 300 : 3000
+  );
 
   return (
     <SlideContainer>
