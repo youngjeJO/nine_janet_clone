@@ -72,13 +72,11 @@ const ContentsBox = styled.li`
 function ChartSlide() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [transition, setTransition] = useState('500ms');
-  let timer: NodeJS.Timeout;
 
   const slideChange = (targetIndex: number) => {
     setTransition('350ms');
     setCurrentSlide(targetIndex);
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    setTimeout(() => {
       setTransition('0s');
       if (targetIndex < 1) {
         targetIndex = chartData.length - 2;
@@ -101,6 +99,23 @@ function ChartSlide() {
     slideChange(targetIndex);
   };
 
+  let downPoint: Number;
+  const mouseDown = (event: React.MouseEvent<HTMLUListElement>) => {
+    event.preventDefault();
+    downPoint = event.clientX;
+  };
+
+  const mouseUp = (event: React.MouseEvent<HTMLUListElement>) => {
+    const upPoint = event.clientX;
+    if (downPoint > upPoint) {
+      const targetIndex = currentSlide + 1;
+      slideChange(targetIndex);
+    } else if (downPoint < upPoint) {
+      const targetIndex = currentSlide - 1;
+      slideChange(targetIndex);
+    }
+  };
+
   return (
     <MainContainer>
       <ButtonBox>
@@ -114,7 +129,7 @@ function ChartSlide() {
       {chartData.map((data) => (
         <SlideWapper transition={transition} currentSlide={currentSlide}>
           <h1>{data.title}</h1>
-          <ul>
+          <ul onMouseDown={mouseDown} onMouseUp={mouseUp}>
             {data.contents.map((chart) => (
               <ContentsBox>
                 <span>{chart.rank}</span>

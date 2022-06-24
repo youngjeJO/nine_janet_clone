@@ -40,13 +40,11 @@ const Btn = styled.button`
 function BannerSlide() {
   const [currentSlide, setCurrentSlide] = useState(3);
   const [transition, setTransition] = useState('500ms');
-  let timer: NodeJS.Timeout;
 
   const slideChange = (targetIndex: number) => {
     setTransition('350ms');
     setCurrentSlide(targetIndex);
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    setTimeout(() => {
       setTransition('0s');
       if (targetIndex < 1) {
         targetIndex = bannerData.length - 4;
@@ -68,6 +66,24 @@ function BannerSlide() {
     const targetIndex = currentSlide - 1;
     slideChange(targetIndex);
   };
+
+  let downPoint: Number;
+  const mouseDown = (event: React.MouseEvent<HTMLLIElement>) => {
+    event.preventDefault();
+    downPoint = event.clientX;
+  };
+
+  const mouseUp = (event: React.MouseEvent<HTMLLIElement>) => {
+    const upPoint = event.clientX;
+    if (downPoint > upPoint) {
+      const targetIndex = currentSlide + 1;
+      slideChange(targetIndex);
+    } else if (downPoint < upPoint) {
+      const targetIndex = currentSlide - 1;
+      slideChange(targetIndex);
+    }
+  };
+
   return (
     <MainContainer>
       <Btn onClick={prevSlide}>
@@ -76,7 +92,7 @@ function BannerSlide() {
       <SectionContainer>
         {bannerData.map((data) => (
           <SlideWapper transition={transition} currentSlide={currentSlide}>
-            <li>
+            <li onMouseDown={mouseDown} onMouseUp={mouseUp}>
               <img src={data.img} alt={data.alt} />
             </li>
           </SlideWapper>

@@ -15,7 +15,7 @@ const SlideContainer = styled.ul`
 
 const SlideBox = styled.li<ISlide>`
   transition: ${(props) => props.transition};
-  transform: ${(props) => `translateX(-${props.currentSlide}00%)`};
+  transform: ${(props) => `translateX(-${props.currentSlide}00% )`};
   img {
     width: 420px;
   }
@@ -32,8 +32,7 @@ function AutoSlide() {
     'https://janet.co.kr/img/common/main/banner/mainBn_top_04.png',
     'https://janet.co.kr/img/common/main/banner/mainBn_top_01.png',
   ];
-
-  const timer: NodeJS.Timeout = setTimeout(
+  setTimeout(
     () => {
       setTransition('350ms');
       if (currentSlide === 5) {
@@ -50,7 +49,7 @@ function AutoSlide() {
     <SlideContainer>
       {slideImg.map((data, key) => (
         <SlideBox currentSlide={currentSlide} transition={transition}>
-          <img src={data} alt={`${key}`} />
+          <img src={data} alt={`${key}img`} />
         </SlideBox>
       ))}
     </SlideContainer>
