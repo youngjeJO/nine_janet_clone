@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from '../data/slideImg.json';
 import { MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
@@ -38,6 +38,7 @@ const SlideWapper = styled.div<ISlide>`
   padding: 10px 20px;
   transition: ${(props) => props.transition};
   transform: ${(props) => `translateX(-${props.currentSlide}00%)`};
+
   h1 {
     font-size: 16px;
     font-weight: bold;
@@ -45,10 +46,13 @@ const SlideWapper = styled.div<ISlide>`
   }
 
   ul {
+    position: relative;
+    left: 0%;
     display: grid;
     width: 460px;
-
     grid-template-columns: 230px 230px;
+    cursor: grabbing;
+    offset: 10px 30px;
   }
 `;
 
@@ -80,13 +84,11 @@ const Banner = styled.img`
 function MainSlide() {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [transition, setTransition] = useState('500ms');
-  let timer: NodeJS.Timeout;
 
   const slideChange = (targetIndex: number) => {
     setTransition('350ms');
     setCurrentSlide(targetIndex);
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    setTimeout(() => {
       setTransition('0s');
       if (targetIndex < 1) {
         targetIndex = data.length - 2;
@@ -109,6 +111,25 @@ function MainSlide() {
     slideChange(targetIndex);
   };
 
+  //mouse Event
+  let downPoint: Number;
+  const mouseDown = (event: React.MouseEvent<HTMLUListElement>) => {
+    event.preventDefault();
+    downPoint = event.clientX;
+  };
+
+  const mouseUp = (event: React.MouseEvent<HTMLUListElement>) => {
+    const upPoint = event.clientX;
+    console.log(event.pageX);
+    if (downPoint > upPoint) {
+      const targetIndex = currentSlide + 1;
+      slideChange(targetIndex);
+    } else if (downPoint < upPoint) {
+      const targetIndex = currentSlide - 1;
+      slideChange(targetIndex);
+    }
+  };
+
   return (
     <Wapper>
       <MainContainer>
@@ -123,7 +144,7 @@ function MainSlide() {
         {data.map((info) => (
           <SlideWapper transition={transition} currentSlide={currentSlide}>
             <h1>{info.name}</h1>
-            <ul>
+            <ul onMouseDown={mouseDown} onMouseUp={mouseUp}>
               {info.contents.map((contents, key) => (
                 <ContentsBox>
                   <img src={contents.icon} alt={info.name + key} />
