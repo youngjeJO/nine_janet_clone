@@ -36,7 +36,7 @@ const SlideWapper = styled.div<ISlide>`
 
 const ButtonBox = styled.div`
   position: absolute;
-  right: 0;
+  right: 30px;
   top: 50px;
   z-index: 1;
   button {
