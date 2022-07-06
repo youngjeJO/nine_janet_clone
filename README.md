@@ -3,7 +3,7 @@
 ## 프로젝트 소개
 
 - 자넷 홈페이지 클론
-- [🚀 배포 링크 🚀](https://nine-janet-clone-o7qvv9d51-youngjejo.vercel.app/)
+- [🚀 배포 링크 🚀](https://nine-janet-clone.vercel.app/)
 
 ## 기술 스택
 
